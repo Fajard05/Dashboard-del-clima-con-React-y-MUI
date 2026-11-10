@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import './App.css';
 import { Grid } from '@mui/material';
 import HeaderUI from './components/HeaderUI';
 import AlertUI from './components/AlertUI';
+import SelectorUI from './components/SelectorUI';
 
 function App() {
+    const [cityInput, setCityInput] = useState('');
     return (
         <Grid container spacing={5} sx={{ justifyContent: 'center', alignItems: 'center' }}>
 
@@ -19,7 +22,18 @@ function App() {
             </Grid>
 
             {/* Selector */}
-            <Grid size={{ xs: 12, md: 3 }}>Elemento: Selector</Grid>
+            <Grid size={{ xs: 12, md: 3 }}>
+                <SelectorUI cityInput={cityInput} setCityInput={setCityInput} />
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 12 }}>
+                {cityInput && (
+                    <p>
+                        Información del clima en <span style={{ textTransform: 'capitalize', fontWeight: 'bold' }}>{cityInput}</span>
+                    </p>
+                )}
+            </Grid>
+            
 
             {/* Indicadores */}
             <Grid size={{ xs: 12, md: 9 }}>Elemento: Indicadores</Grid>
