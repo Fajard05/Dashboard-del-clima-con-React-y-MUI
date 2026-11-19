@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Fajard05.github.io/dashboard",
+  "homepage": "https://Fajard05.github.io/Dashboard-del-clima-con-React-y-MUI",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
